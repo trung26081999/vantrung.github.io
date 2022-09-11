@@ -1,0 +1,12 @@
+body {
+  background-color: antiquewhite;
+}
+.main-layout {
+  border: 1px solid none;
+  margin: 150px 50px;
+  padding-bottom: 150px;
+  background-color: white;
+  .content-layout {
+    display: flex;
+  }
+}
