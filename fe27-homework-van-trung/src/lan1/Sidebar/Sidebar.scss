@@ -1,0 +1,28 @@
+.side-bar {
+  //   border: 1px solid red;
+  width: 700px;
+  justify-content: center;
+  align-items: center;
+
+  .side-bar-content {
+    // border: 1px solid red;
+    width: 600px;
+    label {
+      margin-left: 30px;
+      display: flex;
+      padding-top: 10px;
+      input {
+        width: 250px;
+        margin-left: 20px;
+        border-radius: 5px;
+        display: flex;
+      }
+      .date {
+        margin-left: 12px;
+        width: 100px;
+      }
+    }
+    .saveDate {
+    }
+  }
+}

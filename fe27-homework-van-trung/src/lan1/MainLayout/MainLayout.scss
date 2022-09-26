@@ -1,0 +1,9 @@
+.main-layout {
+  //   border: 1px solid red;
+  height: 100vh;
+  .content-layout {
+    margin-top: 20px;
+    display: flex;
+    height: calc(100vh - 80px);
+  }
+}
