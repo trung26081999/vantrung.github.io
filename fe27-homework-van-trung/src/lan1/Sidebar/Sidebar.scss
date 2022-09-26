@@ -7,10 +7,16 @@
   .side-bar-content {
     // border: 1px solid red;
     width: 600px;
+    .form-content {
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
     label {
       margin-left: 30px;
       display: flex;
-      padding-top: 10px;
+      // padding-top: 10px;
       input {
         width: 250px;
         margin-left: 20px;
@@ -23,6 +29,11 @@
       }
     }
     .saveDate {
+      width: 120px;
+      height: auto;
+      cursor: pointer;
+      text-transform: capitalize;
+      margin-right: 230px;
     }
   }
 }

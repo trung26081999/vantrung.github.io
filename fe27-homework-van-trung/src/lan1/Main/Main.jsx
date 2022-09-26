@@ -1,6 +1,7 @@
 import "./Main.scss";
-import { Component } from "react";
+import { Component, useState } from "react";
 export const Main = (props) => {
+  
   return (
     <div className="main">
       <div className="form">
