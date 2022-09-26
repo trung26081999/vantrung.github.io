@@ -15,6 +15,7 @@ const MainList = (props) => {
       {listData.map((item, index) => {
         return (
           <Main
+            key={index}
             content={item.content}
             alertDate={item.alertDate}
             id={item.id}
