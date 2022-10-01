@@ -1,12 +1,12 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Reminder from "./components/reminder/Reminder";
-import { ReminderContext } from "./context/ReminderContext";
-import { compareWithToday, localStorageUtil } from "./utils";
 import { useEffect, useState } from "react";
-import { REMINDER_LIST_KEY } from "./const";
+import { REMINDER_LIST_KEY } from "../../const";
+import { compareWithToday, localStorageUtil } from "../../utils";
+import AddForm from "../add-form/AddForm";
+import ReminderList from "../reminder-list/ReminderList";
 
-function App() {
+import "./style.scss";
+
+function Reminder(props) {
   const { set, get } = localStorageUtil(REMINDER_LIST_KEY, []);
   const [reminderData, setReminderData] = useState([]);
 
@@ -36,19 +36,17 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {/* Tao provider cua context da duoc khai bao */}
-      <ReminderContext.Provider
-        value={{
-          listReminder: reminderData,
-          handleAdd: handleAddNewReminder,
-          handleDelete: handleDeleteReminder,
-        }}
-      >
-        <Reminder />
-      </ReminderContext.Provider>
+    <div className="Reminder">
+      <h1 className="reminder-header">Nhắc nhở ngày quan trọng của bạn</h1>
+      <div className="reminder-body">
+        <AddForm onAddNewReminder={handleAddNewReminder} />
+        <ReminderList
+          data={reminderData}
+          onDeleteReminder={handleDeleteReminder}
+        />
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Reminder;
