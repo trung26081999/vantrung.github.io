@@ -1,11 +1,12 @@
 import { compareWithToday } from "../../utils";
 import ReminderListChild from "./ReminderListChild";
 import "./style.scss";
-import { useContext } from "react";
-import { ReminderContext } from "./../../context/ReminderContext";
+import { useContext } from 'react';
+import { ReminderContext } from './../../context/ReminderContext';
 
-function ReminderList() {
-  const { listReminder, onDeleteReminder } = useContext(ReminderContext);
+function ReminderList(props) {
+  const {  onDeleteReminder } = props;
+  const {listReminder}=useContext(ReminderContext);
 
   return (
     <div className="ReminderList">
