@@ -23,6 +23,7 @@ function App() {
   }, []);
 
   const handleAddNewReminder = (newReminderData) => {
+    const reminderData = JSON.parse(get());
     const newList = [newReminderData, ...reminderData];
 
     setReminderData(newList);
@@ -30,6 +31,7 @@ function App() {
   };
 
   const handleDeleteReminder = (id) => {
+    const reminderData = JSON.parse(get());
     const newList = reminderData.filter((item) => item.id !== id);
     setReminderData(newList);
     set(newList);
@@ -37,12 +39,11 @@ function App() {
 
   return (
     <div className="App">
-      {/* Tao provider cua context da duoc khai bao */}
       <ReminderContext.Provider
         value={{
           listReminder: reminderData,
-          handleAdd: handleAddNewReminder,
-          handleDelete: handleDeleteReminder,
+          handleAdd: (newReminderData) => handleAddNewReminder(newReminderData),
+          handleDelete: (id) => handleDeleteReminder(id),
         }}
       >
         <Reminder />

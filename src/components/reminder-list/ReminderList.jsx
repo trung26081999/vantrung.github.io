@@ -1,14 +1,16 @@
 import { compareWithToday } from "../../utils";
 import ReminderListChild from "./ReminderListChild";
 import "./style.scss";
+import { useContext } from "react";
+import { ReminderContext } from "./../../context/ReminderContext";
 
-function ReminderList(props) {
-  const { data, onDeleteReminder } = props;
+function ReminderList() {
+  const { listReminder, onDeleteReminder } = useContext(ReminderContext);
 
   return (
     <div className="ReminderList">
       <ReminderListChild />
-      {data?.map((item) => {
+      {listReminder?.map((item) => {
         const isEqualToday = compareWithToday(item.date);
 
         return (
